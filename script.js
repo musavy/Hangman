@@ -11,7 +11,7 @@ const words = ["application", "programming", "interface", "wizard"];
 
 let selectedWord = words[Math.floor(Math.random() * words.length)];
 
-const correctLetters = [];
+const correctLetters = ["w", "i", "z", "a", "r", "d"];
 const wrongLetters = [];
 
 function displayWord() {
@@ -26,6 +26,12 @@ ${correctLetters.includes(letter) ? letter : ""}
     )
     .join("")}
 `;
+
+  const innerWord = wordEl.innerText.replace(/\n/g, "");
+  if (innerWord === selectedWord) {
+    finalMessage.innerText = "Congratulation! You Win  😃";
+    popup.style.display = "flex";
+  }
 }
 
 displayWord();
